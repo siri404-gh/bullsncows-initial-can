@@ -1,0 +1,38 @@
+<div class='board'>
+<h1><img src='images/bulls.png'/> &amp; <img src='images/cows.png'/></h1>
+
+	<hr>
+	Type your guess here:<br>
+	<!--TODO: set value with can-value; removes need for .val() checks -->
+	<input id='guess1' maxlength=1 class='guessInput' type='text'/>
+	<input id='guess2' maxlength=1 class='guessInput' type='text'/>
+	<input id='guess3' maxlength=1 class='guessInput' type='text'/>
+	<input id='guess4' maxlength=1 class='guessInput' type='text'/>
+	<hr>
+	<div class='table'>
+		<table class='guessTable'>
+			<thead>
+				<th></th>
+				<th>Guess</th>
+				<th>Bulls</th>
+				<th>Cows</th>
+			</thead>
+			<tbody>
+				{{#if guesses.isResolved}}
+					{{#each guesses.value}}
+						<tr>
+							<td>{{@index 1}}</td>
+							<td>{{word}}</td>
+							<td>{{bulls}}</td>
+							<td>{{cows}}</td>
+						</tr>
+					{{/each}}
+				{{/#if}}
+			</tbody>
+		</table>
+	</div>
+	<hr>
+
+	<h2>Your Score:{{score}}</h2>
+	&copy; 2015 | Blah Blah Games
+</div>
